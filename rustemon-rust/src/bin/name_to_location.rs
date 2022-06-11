@@ -1,5 +1,5 @@
-use super::translate_name::Region;
 use rustemon::{client::RustemonClient, model::locations::Location};
+use rustemon_rust::translate::translate_location::Region;
 
 async fn process_data(location: &Location) {
     println!("{:?}", location);
