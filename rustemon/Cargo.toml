@@ -1,0 +1,15 @@
+[package]
+name = "rustemon"
+version = "0.1.0"
+edition = "2021"
+default-run = "name_to_location"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "name_to_location"
+path = "src/bin/name_to_location.rs"
+
+[dependencies]
+rustemon = "2.0.0"
+tokio = {version = "1.19.2", features = ["full"]}
