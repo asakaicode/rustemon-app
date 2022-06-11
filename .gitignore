@@ -1,2 +1,2 @@
-./rustemon/http-cacache
-./rustemon/target
+rustemon/http-cacache/*
+rustemon/target/*
