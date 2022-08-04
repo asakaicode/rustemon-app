@@ -1,17 +1,18 @@
-use rustemon::{client::RustemonClient, model::locations::Location};
-use rustemon_rust::translate::translate_location::Region;
+use rustemon::{client::RustemonClient, model::locations::Location, locations::location};
 
-async fn process_data(location: &Location) {
-    println!("{:?}", location);
+fn process_data(location: &Location) {
+    let mut game_indices = location.game_indices.unwrap();
+    let game_indice = game_indices.pop().unwrap();
+    println!("{:?}", game_indice);
 }
 
 #[tokio::main]
 async fn main() {
     let rustemon_client = RustemonClient::default();
     let location =
-        rustemon::locations::location::get_by_name("postwick-town", &rustemon_client).await;
+        location::get_by_name("cerulean-city", &rustemon_client).await;
     match location {
-        Ok(l) => process_data(&l).await,
+        Ok(l) => process_data(&l),
         Err(err) => println!("{}", err),
     }
 }
